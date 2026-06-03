@@ -1,0 +1,24 @@
+; Engine configuration file.
+; Laboratoire d'algèbre linéaire — Polytechnique Montréal
+; Godot 4.x
+
+config_version=5
+
+[application]
+
+config/name="Laboratoire Algèbre Linéaire"
+config/description="Serious Game pédagogique — changement de base et composition de transformations."
+run/main_scene="res://scenes/menu_principal.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.09, 0.11, 0.14, 1)

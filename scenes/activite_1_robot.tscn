@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1robotvoyageur01"]
+
+[ext_resource type="Script" path="res://scripts/robot_voyageur.gd" id="1"]
+
+[sub_resource type="SystemFont" id="FontMono"]
+font_names = PackedStringArray("monospace", "Consolas", "Courier New")
+
+[node name="Activite1Robot" type="Node2D"]
+script = ExtResource("1")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Tableau" type="PanelContainer" parent="UI"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Marge" type="MarginContainer" parent="UI/Tableau"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="UI/Tableau/Marge"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Titre" type="Label" parent="UI/Tableau/Marge/VBox"]
+layout_mode = 2
+text = "ACTIVITÉ 1 — ROBOT VOYAGEUR"
+
+[node name="Formule" type="Label" parent="UI/Tableau/Marge/VBox"]
+layout_mode = 2
+modulate = Color(0.7, 0.78, 0.85, 1)
+text = "x_local = Rᵀ · (x_monde − x_robot)"
+
+[node name="LabelMatriceR" type="Label" parent="UI/Tableau/Marge/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontMono")
+text = "R(θ)"
+
+[node name="LabelMatriceRT" type="Label" parent="UI/Tableau/Marge/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontMono")
+text = "Rᵀ"
+
+[node name="LabelTranslation" type="Label" parent="UI/Tableau/Marge/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontMono")
+text = "d"
+
+[node name="LabelLocal" type="Label" parent="UI/Tableau/Marge/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontMono")
+text = "x_local"
+
+[node name="Separateur" type="HSeparator" parent="UI/Tableau/Marge/VBox"]
+layout_mode = 2
+
+[node name="LabelErreur" type="Label" parent="UI/Tableau/Marge/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 2
+text = "État du calcul"
+
+[node name="Aide" type="Label" parent="UI/Tableau/Marge/VBox"]
+layout_mode = 2
+modulate = Color(0.6, 0.66, 0.72, 1)
+autowrap_mode = 2
+text = "Flèches / WASD : déplacer · Q / E : pivoter · Clic gauche : placer la cible · R : réinitialiser · Échap : menu"
